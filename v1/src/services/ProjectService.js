@@ -7,6 +7,12 @@ const insert = (projectData) => {
     return projects.save();
 }
 
+const list = () => {
+    const getList = ProjectModel.findOne({});
+    return getList;
+}
+
 module.exports = {
     insert,
+    list
 }

@@ -6,6 +6,6 @@ const ProjectSchema= new Mongoose.Schema({
     //     ref: "user" 
     // },
 
-});
+}, {versionKey:false,timestamps:true});
 
 module.exports = Mongoose.model("project",ProjectSchema);

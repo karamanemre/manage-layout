@@ -1,8 +1,8 @@
-const {insert} = require("../services/ProjectService")
+const {insert,list} = require("../services/ProjectService")
 const httpStatus = require("http-status")
 
 const create = (req,res) => {
-    insert({name:"1"})
+    insert(req.body)
     .then((response) => {
         res.status(httpStatus.CREATED).send(response)
     }).catch((e)=>{
@@ -10,11 +10,15 @@ const create = (req,res) => {
     })
 }
 
-const index = (req,res) => {
-   res.status(httpStatus.OK).send("Project Index")
+const getList = (req,res) => {
+    list().then((res)=>{
+        res.status(httpStatus.OK).send(res)
+    }).catch((err)=>{
+        res.status(httpStatus.NOT_FOUND).send(res)
+    })
 }
 
 module.exports = {
-    index,
+    getList,
     create
 }
