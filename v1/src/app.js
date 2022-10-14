@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const config = require("./config");
 const loaders = require('./loaders');
-const { ProjectRoute } = require("./api-routes")
+const { ProjectRoute, UsersRoute } = require("./api-routes")
 
 config();
 loaders();
@@ -16,7 +16,8 @@ app.get('/', (req, res) => {
   })
 
 app.listen(process.env.APP_PORT,() => {
-    console.log("sunucu ayakta...");
+    console.log("Server up...");
     app.use("/project", ProjectRoute)
+    app.use("/users", UsersRoute)
 });
 
