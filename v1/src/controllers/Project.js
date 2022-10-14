@@ -11,8 +11,8 @@ const create = (req,res) => {
 }
 
 const getList = (req,res) => {
-    list().then((res)=>{
-        res.status(httpStatus.OK).send(res)
+    list().then((response)=>{
+        res.status(httpStatus.OK).send(response)
     }).catch((err)=>{
         res.status(httpStatus.NOT_FOUND).send(res)
     })

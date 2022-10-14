@@ -8,8 +8,7 @@ const insert = (projectData) => {
 }
 
 const list = () => {
-    const getList = ProjectModel.findOne({});
-    return getList;
+    return ProjectModel.find();
 }
 
 module.exports = {

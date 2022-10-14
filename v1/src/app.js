@@ -17,6 +17,6 @@ app.get('/', (req, res) => {
 
 app.listen(process.env.APP_PORT,() => {
     console.log("sunucu ayakta...");
-    app.use("/project", ProjectRoute.router)
+    app.use("/project", ProjectRoute)
 });
 
