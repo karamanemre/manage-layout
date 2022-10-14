@@ -6,5 +6,6 @@
 
 module.exports = {
     OK,
+    NOT_FOUND
 }
 

@@ -1,11 +1,10 @@
 const express = require("express");
-const http = require("../constants/httpStatusCode");
-const {create} = require("../controllers/Project");
-
+const controller = require("../controllers/Project");
 const router = express.Router();
 
-router.get("/",(req,res) => create)
+router.post("/",controller.create)
+router.get("/", controller.index);
 
 module.exports = {
-    router,
-}
+  router,
+};

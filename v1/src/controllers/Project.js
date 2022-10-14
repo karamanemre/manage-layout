@@ -1,9 +1,20 @@
-const http = require("../constants/httpStatusCode");
+const {insert} = require("../services/ProjectService")
+const httpStatus = require("http-status")
 
 const create = (req,res) => {
-    res.status(200).send("Project Index")
+    insert({name:"1"})
+    .then((response) => {
+        res.status(httpStatus.CREATED).send(response)
+    }).catch((e)=>{
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).send("HATA")
+    })
+}
+
+const index = (req,res) => {
+   res.status(httpStatus.OK).send("Project Index")
 }
 
 module.exports = {
-    create,
+    index,
+    create
 }
