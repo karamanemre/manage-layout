@@ -9,7 +9,18 @@ const list = () => {
     return UsersModel.find();
 }
 
+const loginUser = (loginData) => {
+    return UsersModel.findOne(loginData)
+}
+
+const checkEmailInUse = (email) => {
+    const user = UsersModel.findOne(email);
+    return user ? true : false;
+}
+
 module.exports = {
     insert,
-    list
+    list,
+    loginUser,
+    checkEmailInUse
 }
