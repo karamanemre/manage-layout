@@ -28,7 +28,7 @@ const login = (req, res) => {
       }
 
       user = {
-        ...user,
+        ...user.toObject(),
         tokens: {
           access_token: generatAccessToken(user),
           refresh_token: generatRefreshToken(user),
