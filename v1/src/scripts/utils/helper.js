@@ -8,7 +8,7 @@ const passwordToHash = (password) => {
 const generatAccessToken = (user) => {
   return JWT.sign(
     {
-      name: user.full_name,
+      name: user.email,
       ...user,
     },
     process.env.ACCESS_TOKEN_SECRET_KEY,
@@ -20,7 +20,7 @@ const generatAccessToken = (user) => {
 const generatRefreshToken = (user) => {
   return JWT.sign(
     {
-      name: user.full_name,
+      name: user.email,
       ...user,
     },
     process.env.REFRESH_TOKEN_SECRET_KEY
