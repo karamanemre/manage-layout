@@ -5,7 +5,7 @@ const validate = require("../middlewares/validate");
 const schemas = require("../validations/ProjectValidation");
 const router = express.Router();
 
-router.route("/").post(validate(schemas.createValidation), controller.create);
+router.route("/").post(authenticateToken,validate(schemas.createValidation), controller.create);
 router.route("/").get(authenticateToken, controller.getList);
 
 module.exports = router;
