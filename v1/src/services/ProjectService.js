@@ -15,7 +15,12 @@ const list = () => {
     });
 }
 
+const modify = (data,id) => {
+    return ProjectModel.findByIdAndUpdate(id,data,{new:true});
+}
+
 module.exports = {
     insert,
-    list
+    list,
+    modify,
 }
