@@ -13,7 +13,7 @@ const authenticateToken = (req, res, next) => {
       return res
         .status(httpStatus.FORBIDDEN)
         .send({ message: err });
-    req.user = user;
+    req.user = user?._doc;
     next();    
   });
 };

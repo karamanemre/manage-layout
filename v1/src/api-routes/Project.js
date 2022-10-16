@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = require("../controllers/Project");
+const controller = require("../controllers/ProjectController");
 const authenticateToken = require("../middlewares/authenticate");
 const validate = require("../middlewares/validate");
 const schemas = require("../validations/ProjectValidation");

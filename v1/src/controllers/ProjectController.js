@@ -1,7 +1,8 @@
 const {insert,list} = require("../services/ProjectService")
 const httpStatus = require("http-status")
 
-const create = (req,res) => {
+const create = (req,res) => { 
+    req.body.user_id = req.user;
     insert(req.body)
     .then((response) => {
         res.status(httpStatus.CREATED).send(response)
